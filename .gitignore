@@ -1,0 +1,10 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+*.py[cod]
+dist
+*.txt
+.idea/
+pydwd.egg-info/
+*.tar.*
+deb_dist
