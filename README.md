@@ -67,20 +67,6 @@ $ git clone https://github.com/ckaus/pydwd.git
 $ cd pydwd && sudo pip install .
 ```
 
-or
-
-```bash
-$ sudo pip install pydwd
-```
-
-Build from sources
-
-```bash
-$ git clone https://github.com/ckaus/pydwd.git
-$ cd pydwd && python setup.py --command-packages=stdeb.command bdist_deb
-$ cd deb_dist && sudo dpkg -i python-pydwd_1.0.0-1_all.deb
-```
-
 License
 -------
 

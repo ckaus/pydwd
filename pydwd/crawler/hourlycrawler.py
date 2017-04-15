@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from .basecrawler import BaseCrawler
-from ..parser import weatherparser
-from ..utils import ftphelper
-
+from pydwd.crawler.basecrawler import BaseCrawler
+from pydwd.utils import ftphelper
+from pydwd.parser import weatherparser
 
 class HourlyCrawler(BaseCrawler):
     def __init__(self):
-        self._host = 'ftp.dwd.de'
+        self._host = 'ftp-cdc.dwd.de'
         self._station_file = 'TU_Stundenwerte_Beschreibung_Stationen.txt'
         self._data_path = '/pub/CDC/observations_germany/climate/hourly/air_temperature/recent/'
         BaseCrawler.__init__(self)

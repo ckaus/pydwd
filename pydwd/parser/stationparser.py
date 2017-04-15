@@ -2,7 +2,7 @@
 
 import re
 
-from ..utils import translator
+from pydwd.utils import translator
 
 
 def parse(file_content):

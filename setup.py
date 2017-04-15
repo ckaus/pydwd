@@ -19,6 +19,7 @@ setup(
     The weather data are provided by Deutscher Wetterdienst.''',
     license='MIT',
     packages=find_packages(),
+    package_data={'pydwd.utils': ['language.cfg']},
     include_package_data=True,
     keywords=['dwd', 'weather', 'crawler'],
     classifiers=[

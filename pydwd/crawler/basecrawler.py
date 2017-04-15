@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
+from abc import abstractmethod, ABCMeta
 import codecs
 import os.path
-from abc import abstractmethod, ABCMeta
 
-from ..parser import stationparser
-from ..utils import logger, ftphelper
+from pydwd.utils import ftphelper, logger
+from pydwd.parser import stationparser
 
 
 class BaseCrawler:
