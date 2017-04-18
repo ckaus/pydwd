@@ -17,6 +17,12 @@ class BaseCrawler:
     def __get_weather__(self, id):
         pass
 
+    def get_all_stations(self):
+        return stationparser.get_by_index(self.stations, 6)
+
+    def get_all_regions(self):
+        return stationparser.get_by_index(self.stations, 7)
+
     def by_city(self, name):
         """
         Crawl weather data of a city by city name.
@@ -32,7 +38,7 @@ class BaseCrawler:
 
     def by_region(self, name):
         """
-        Crawl weather data of a region by region name.
+        Crawl weather data of a region by region (state) name.
         :param name: Region name
         :returns: Observations as dict.
         """

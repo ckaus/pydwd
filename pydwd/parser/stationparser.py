@@ -20,20 +20,32 @@ def parse(file_content):
     _line[1] = _line[1][:4] + '-' + _line[1][4:6] + '-' + _line[1][6:]
     _line[2] = _line[2][:4] + '-' + _line[2][4:6] + '-' + _line[2][6:]
 
+    _line = __prepare_station_region_entries_(_line)
+
+    for i in range(0, len(keys)):
+        result.update({keys[i]: _line[i]})
+    return result
+
+def __prepare_station_region_entries_(_line):
     if len(_line) > 7:  # some station names consists of 2 or more words
         station_name = ''
         for i in range(6, len(_line) - 1):
             # concatenate every word on line between position 6 and n - 1,
             # where n is the last word and represents the region
             station_name = station_name + ' ' + _line[i]
-        # replace station name remove white space at index 0
+        # correct station name remove white space at index 0
         _line[6] = station_name[1:]
-        # set last entry as region
+        # and set last entry as region
         _line[7] = _line[len(_line) - 1]
-    for i in range(0, len(keys)):
-        result.update({keys[i]: _line[i]})
-    return result
+    return _line
 
+def get_by_index(file_content, index):
+    result = []
+    for line in file_content[2:]:
+        _line = __prepare_station_region_entries_(re.sub('\s{2,}', ' ', line).split())
+        if _line[index] not in result:
+            result.append(_line[index])
+    return result
 
 def stations_by_value(file_content, value, index):
     result = []
@@ -41,7 +53,7 @@ def stations_by_value(file_content, value, index):
     for line in file_content[3:-1]:
         _line = re.sub('\s{2,}', ' ', line).split()
         if value in _line[index]:
-            # extract line with given id and keys and create new file_content
+            # extract line by given keys and create new file_content
             _station = parse([keys_line, line])
             result.append(_station)
     return result
