@@ -52,8 +52,8 @@ Output:
 ```
 
 Some more <Daily/Hourly/Monthly>Crawler functions:
-* by_city(<city name>)
-* by_region(<region name>)
+* by_city('<city name>')
+* by_region('<region name>')
 * get_all_stations()
 * get_all_regions()
 
