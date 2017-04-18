@@ -16,7 +16,6 @@ def translate_list(item_list):
     for index, item in enumerate(item_list):
         if not isinstance(item, list):
             try:
-                print configParser.sections()
                 item_list[index] = configParser.get('en', item.lower())
             except ConfigParser.NoOptionError, e:
                 item_list[index] = item
