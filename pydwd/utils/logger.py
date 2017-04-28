@@ -10,9 +10,11 @@ class _Color:
     SUCCESS = '\033[92m'  # green
     WARNING = '\033[93m'  # yellow
 
+
 '''
 Print messages to terminal with different colors
 '''
+
 
 def error(msg):
     clasz = inspect.stack()[1][1]

@@ -26,6 +26,7 @@ def parse(file_content):
         result.update({keys[i]: _line[i]})
     return result
 
+
 def __prepare_station_region_entries_(_line):
     if len(_line) > 7:  # some station names consists of 2 or more words
         station_name = ''
@@ -39,6 +40,7 @@ def __prepare_station_region_entries_(_line):
         _line[7] = _line[len(_line) - 1]
     return _line
 
+
 def get_by_index(file_content, index):
     result = []
     for line in file_content[2:]:
@@ -46,6 +48,7 @@ def get_by_index(file_content, index):
         if _line[index] not in result:
             result.append(_line[index])
     return result
+
 
 def stations_by_value(file_content, value, index):
     result = []

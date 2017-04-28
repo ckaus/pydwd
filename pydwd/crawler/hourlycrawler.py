@@ -4,6 +4,7 @@ from pydwd.crawler.basecrawler import BaseCrawler
 from pydwd.utils import ftphelper
 from pydwd.parser import weatherparser
 
+
 class HourlyCrawler(BaseCrawler):
     def __init__(self):
         self._host = 'ftp-cdc.dwd.de'

@@ -4,6 +4,7 @@ import re
 
 from pydwd.utils import translator
 
+
 def parse(file_content):
     result = {}
 

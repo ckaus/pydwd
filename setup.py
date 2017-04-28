@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from pydwd import __version__
+
 try:
     from setuptools import setup, find_packages
 
@@ -9,7 +11,7 @@ except ImportError as error:
 
 setup(
     name='pydwd',
-    version='1.0.0',
+    version=__version__,
     url='https://github.com/ckaus/pydwd',
     download_url='https://github.com/ckaus/pydwd/tarball/1.0.0',
     author='ckaus',

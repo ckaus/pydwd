@@ -51,21 +51,20 @@ Output:
 }
 ```
 
-<Daily/Hourly/Monthly>Crawler functions:
-* by_city('city name'), by_region('region name')
-* get_all_stations(), get_all_regions()
+Functions:
 
-Features
---------
-
-* Hourly/Daily/Monthly weather data by city or region
+* by_city('city name')
+* by_region('region name')
+* get_all_stations()
+* get_all_regions()
 
 How to install
 --------------
 
 ```bash
 $ git clone https://github.com/ckaus/pydwd.git
-$ cd pydwd && sudo pip install .
+$ cd pydwd
+$ sudo pip install .
 ```
 
 License
