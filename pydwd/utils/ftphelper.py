@@ -47,24 +47,24 @@ def download_file(host, file_path, file_name):
 
 
 def get_file_txt_zip(url, file_name):
-    try:
-        file_socket = get_response(url)
-        archive_bytes = io.BytesIO(file_socket.read())
-        archive_file = zipfile.ZipFile(archive_bytes, 'r')
-        for name in archive_file.namelist():
-            if file_name in name:
-                file_content = archive_file.open(name)
-                archive_file.close()
-                return file_content.readlines()
-    except (urllib2.HTTPError, urllib2.URLError):
-        logger.warning('File: %s not found.' % url)
+    file_socket = get_response(url)
+    if file_socket is None:
         return None
+    archive_bytes = io.BytesIO(file_socket.read())
+    archive_file = zipfile.ZipFile(archive_bytes, 'r')
+    for name in archive_file.namelist():
+        if file_name in name:
+            file_content = archive_file.open(name)
+            archive_file.close()
+            return file_content.readlines()
+    return None
 
 
 def get_response(url):
     try:
         return urllib2.urlopen(url)
-    except (urllib2.HTTPError, urllib2.URLError) as error:
-        raise error
+    except (urllib2.HTTPError, urllib2.URLError):
+        logger.warning('File: %s not found.' % url)
     except Exception as error:
         logger.error('Exception: %s' % (traceback.format_exc(), error))
+    return None

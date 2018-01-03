@@ -5,7 +5,7 @@ import re
 from pydwd.utils import translator
 
 
-def parse(file_content):
+def parse(file_content, translation):
     result = {}
 
     if not file_content:
@@ -15,8 +15,7 @@ def parse(file_content):
     keys = re.sub('(;\s)', ';', keys)
     keys = keys.strip().split(';')
     keys.pop()  # remove last entry: eor
-    keys = translator.translate_list(keys)
-
+    keys = translator.translate_list(keys, translation)
     last_entry_line = len(file_content) - 2  # get line of last entry
     values = re.sub('(\s|\t)+', '', file_content[last_entry_line])
     values = values.strip().split(';')

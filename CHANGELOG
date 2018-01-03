@@ -1,3 +1,13 @@
-python-pydwd-1.0.0-1 2016-09-10
+python-pydwd-1.0.0 2016-09-10
     New:
         - Hourly/Daily/Monthly Crawler
+python-pydwd-1.0.1 2017-12-30
+    Fix:
+        - Correct weather data file names
+        - Correct parse start position of station parser
+        - Some code improvements
+    Add:
+        - Add package 'example'
+
+python-pydwd-1.0.2 2018-01-03
+    Replace language file

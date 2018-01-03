@@ -32,9 +32,23 @@ class BaseCrawler:
         :returns: Observations as dict
         """
         station_list = stationparser.stations_by_value(self.stations, name, 6)
-        if len(station_list) > 1:
-            return self.__build_observation_list__(station_list)
-        return self.__build_observation__(station_list[0])
+
+        if len(station_list) == 0:
+            return {}
+
+        tmp_station_list = station_list
+        idx = 0
+        for station in station_list:
+            station_name = station['station_name']
+            if len(name) < len(station_name) \
+                    and station_name[len(name)] is not '-':
+                        print "DEL %s" % (station_name)
+                        del tmp_station_list[idx]
+
+            idx += 1
+        if len(tmp_station_list) > 1:
+            return self.__build_observation_list__(tmp_station_list)
+        return self.__build_observation__(tmp_station_list[0])
 
     def by_region(self, name):
         """
@@ -79,12 +93,7 @@ class BaseCrawler:
         return result
 
     def __build_observation__(self, station):
-        if not bool(station):
-            return {}
-        weather = self.__get_weather__(station['id'])
-        if not bool(weather):  # station is inactive
-            return {}
-
+        weather = self.__get_weather__(station['station_id'])
         result = {'observation': {}}
         result['observation']['station'] = station
         result['observation']['weather'] = weather

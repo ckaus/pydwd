@@ -13,15 +13,15 @@ setup(
     name='pydwd',
     version=__version__,
     url='https://github.com/ckaus/pydwd',
-    download_url='https://github.com/ckaus/pydwd/tarball/1.0.0',
+    download_url='https://github.com/ckaus/pydwd/tarball/1.0.1',
     author='ckaus',
     author_email='christian.kaus@fu-berlin.de',
     description='Python library for crawling weather data of Germany.',
     long_description='''PyDWD crawl weather data from german weather stations.
     The weather data are provided by Deutscher Wetterdienst.''',
     license='MIT',
-    packages=find_packages(),
-    package_data={'pydwd.utils': ['language.cfg']},
+    packages=find_packages(exclude="example"),
+    package_data={'pydwd.utils': ['parameter.cfg']},
     include_package_data=True,
     keywords=['dwd', 'weather', 'crawler'],
     classifiers=[

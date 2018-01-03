@@ -13,7 +13,7 @@ def parse(file_content):
 
     keys = re.sub('\s{2,}', ' ', file_content[0]).strip()
     keys = re.sub('\s', ';', keys).split(';')
-    keys = translator.translate_list(keys)
+    keys = translator.translate_list(keys, translation='en-station')
     _line = re.sub('\s{2,}', ' ', file_content[1]).split()
 
     # convert date from YYYYMMDD to YYYY-MM-DD
@@ -53,10 +53,9 @@ def get_by_index(file_content, index):
 def stations_by_value(file_content, value, index):
     result = []
     keys_line = file_content[0]
-    for line in file_content[3:-1]:
+    for line in file_content[2:-1]:
         _line = re.sub('\s{2,}', ' ', line).split()
         if value in _line[index]:
-            # extract line by given keys and create new file_content
             _station = parse([keys_line, line])
             result.append(_station)
     return result

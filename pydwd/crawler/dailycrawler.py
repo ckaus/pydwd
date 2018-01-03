@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from pydwd.crawler.basecrawler import BaseCrawler
-from pydwd.utils import ftphelper
+from pydwd.utils import ftphelper, translator
 from pydwd.parser import weatherparser
 
 
@@ -17,4 +17,4 @@ class DailyCrawler(BaseCrawler):
         archive_name = 'tageswerte_KL_' + '%05d' % int(id) + '_akt.zip'
         file_url = 'ftp://' + self._host + self._data_path + archive_name
         content = ftphelper.get_file_txt_zip(file_url, file_name)
-        return weatherparser.parse(content)
+        return weatherparser.parse(content, translation='en-daily')

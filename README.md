@@ -12,40 +12,40 @@ Example:
 ```python
    from pydwd.crawler.dailycrawler import DailyCrawler
    crawler = DailyCrawler()
-   print crawler.by_city('Berlin-Buch')
+   print crawler.by_city('Berlin-Tegel')
 ```
 
 Output:
 
 ```bash
-{'observation':
-    {'weather':
-        {'wind_speed': '-999',
-        'sunshine_duration': '-999', 
-        'air_pressure_at_station': '-999', 
-        'precipitation_height': '0.0', 
-        'precipitation_height_ind': '0', 
-        'min_soil_air_temperature': '11.9', 
-        'measurement_date': '2016-09-08', 
-        'relative_humidity': '70.17', 
-        'air_temperature': '20.9', 
-        'quality_level': '1', 
-        'cloud_coverage': '-999', 
-        'max_air_temperature': '29.3', 
-        'min_air_temperature': '14.6', 
-        'vapour_pressure': '16.4', 
-        'id': '400', 
-        'max_wind_speed': '-999'
+{'observation': 
+    {'weather': 
+        {'daily_snow_depth_(cm)': '0', 
+        'daily_sunshine_duration_(h)': '1.567', 
+        'precipitation_form': '6', 
+        'daily mean of wind velocity_(m/s)': '6.2', 
+        'daily_precipitation_height_(mm)': '3.5', 
+        'daily_maximum_of_temperature_at_2m_height_(C)': '12.2', 
+        'station_id': '430', 
+        'daily_mean_of_temperature_(C)': '8.3', 
+        'daily_mean_of_vapor_pressure_(hPa)': '7.6', 
+        'daily_maximum_of_wind_gust_(m/s)': '16.8', 
+        'date': '2018-01-01', 
+        'quality_level_of_next_columns': '1', 
+        'daily_mean_of_relative_humidity(%)': '69.08', 
+        'daily_mean_of_pressure_(hPa)': '996.15', 
+        'daily_minimum_of_temperature_at_2m_height_(C)': '4.1', 
+        'daily_mean_of_cloud_cover_(1/8)': '6.1'
         }, 
-    'station':
-        {'from_date': u'1961-01-01', 
-        'station_height': u'60', 
-        'till_date': u'2016-09-08', 
-        'latitude': u'52.6309', 
+    'station': 
+        {'station_name': u'Berlin-Tegel', 
+        'station_height': u'36', 
+        'longitude': u'13.3088', 
+        'latitude': u'52.5644', 
         'federal_state': u'Berlin', 
-        'station_name': u'Berlin-Buch', 
-        'id': u'400', 
-        'longitude': u'13.5022'
+        'till_time': u'2018-01-01', 
+        'from_time': u'1963-01-01', 
+        'station_id': u'00430'
         }
     }
 }
