@@ -15,7 +15,7 @@ setup(
     url='https://github.com/ckaus/pydwd',
     download_url='https://github.com/ckaus/pydwd/tarball/1.0.1',
     author='ckaus',
-    author_email='christian.kaus@fu-berlin.de',
+    author_email='christian.kaus@hotmail.de',
     description='Python library for crawling weather data of Germany.',
     long_description='''PyDWD crawl weather data from german weather stations.
     The weather data are provided by Deutscher Wetterdienst.''',

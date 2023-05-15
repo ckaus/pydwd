@@ -7,8 +7,8 @@ from pydwd.parser import weatherparser
 
 class DailyCrawler(BaseCrawler):
     def __init__(self):
-        self._host = 'ftp-cdc.dwd.de'
-        self._data_path = '/pub/CDC/observations_germany/climate/daily/kl/recent/'
+        self._host = 'opendata.dwd.de'
+        self._data_path = '/climate_environment/CDC/observations_germany/climate/daily/kl/recent/'
         self._station_file = 'KL_Tageswerte_Beschreibung_Stationen.txt'
         BaseCrawler.__init__(self)
 

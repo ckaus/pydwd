@@ -21,17 +21,17 @@ def error(msg):
     line = inspect.stack()[1][2]
     func = inspect.stack()[1][3]
 
-    print '[%s%s%s] class:%s in %s() on line %s\n\tMessage: %s' \
-          % (_Color.ERROR, 'ERROR', _Color.NORMAL, clasz, func, line, msg)
+    print('[%s%s%s] class:%s in %s() on line %s\n\tMessage: %s' \
+          % (_Color.ERROR, 'ERROR', _Color.NORMAL, clasz, func, line, msg))
 
 
 def info(msg):
-    print '[%s%s%s] %s' % (_Color.INFO, 'INFO', _Color.NORMAL, msg)
+    print('[%s%s%s] %s' % (_Color.INFO, 'INFO', _Color.NORMAL, msg))
 
 
 def success(msg):
-    print '[%s%s%s] %s' % (_Color.SUCCESS, 'SUCCESS', _Color.NORMAL, msg)
+    print('[%s%s%s] %s' % (_Color.SUCCESS, 'SUCCESS', _Color.NORMAL, msg))
 
 
 def warning(msg):
-    print '[%s%s%s] %s' % (_Color.WARNING, 'WARNING', _Color.NORMAL, msg)
+    print('[%s%s%s] %s' % (_Color.WARNING, 'WARNING', _Color.NORMAL, msg))

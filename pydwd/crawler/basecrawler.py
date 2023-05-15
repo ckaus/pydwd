@@ -42,7 +42,7 @@ class BaseCrawler:
             station_name = station['station_name']
             if len(name) < len(station_name) \
                     and station_name[len(name)] is not '-':
-                        print "DEL %s" % (station_name)
+                        print ("DEL %s" % station_name)
                         del tmp_station_list[idx]
 
             idx += 1
@@ -80,7 +80,7 @@ class BaseCrawler:
         try:
             with codecs.open(self._station_file, 'r', encoding='ISO-8859-1') as f:
                 return f.readlines()
-        except IOError, error:
+        except (IOError, error):
             logger.error('Cannot open local file: %s.' % (error, self._station_file))
             return None
 

@@ -5,10 +5,11 @@ import ftplib
 import io
 import time
 import traceback
-import urllib2
+from urllib.request import urlopen
 import zipfile
+from urllib.request import HTTPError, URLError
 
-import logger
+from . import logger
 
 
 def get_modified_time_of_file(host, file_path, file_name):
@@ -54,16 +55,16 @@ def get_file_txt_zip(url, file_name):
     archive_file = zipfile.ZipFile(archive_bytes, 'r')
     for name in archive_file.namelist():
         if file_name in name:
-            file_content = archive_file.open(name)
+            file_content = archive_file.open(name, 'r')
             archive_file.close()
-            return file_content.readlines()
+            return [str(i,'utf-8') for i in file_content.readlines()]
     return None
 
 
 def get_response(url):
     try:
-        return urllib2.urlopen(url)
-    except (urllib2.HTTPError, urllib2.URLError):
+        return urlopen(url)
+    except (HTTPError, URLError):
         logger.warning('File: %s not found.' % url)
     except Exception as error:
         logger.error('Exception: %s' % (traceback.format_exc(), error))

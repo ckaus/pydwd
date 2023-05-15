@@ -10,7 +10,7 @@ def parse(file_content, translation):
 
     if not file_content:
         return result
-
+    
     keys = re.sub('\s+', ' ', file_content[0])
     keys = re.sub('(;\s)', ';', keys)
     keys = keys.strip().split(';')
