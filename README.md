@@ -1,6 +1,8 @@
 PyDWD
 =====
 
+IN WORK
+
 PyDWD crawl weather data from german weather stations. The weather data
 are provided by [Deutscher Wetterdienst](http://www.dwd.de/).
 
